@@ -2,7 +2,7 @@ import requests
 from spotify import *
 from creds import CLIENT_ID, CLIENT_SECRET
 
-def great(username, track):
+def find_playlist_from_user_library(username, track):
     all_playlists_vibes = get_vibes_for_all_playlists(username)
     track_vibes = get_audio_features(track)
     distances = []
@@ -19,7 +19,7 @@ def distance(track, playlist):
         total_dist += (track[characteristic] - playlist[characteristic])**2
     return total_dist
 
-print(great("anikabahl76", "2m6Ko3CY1qXNNja8AlugNc"))
+print(find_playlist_from_user_library("anikabahl76", "2m6Ko3CY1qXNNja8AlugNc"))
 
 
 
